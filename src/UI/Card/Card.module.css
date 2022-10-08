@@ -1,7 +1,6 @@
 .card {
   box-shadow: 0 0.4rem 0.8rem rgb(14, 7, 37);
   border-radius: 0.5rem;
-  height: 60vh;
   width: 50%;
   overflow: hidden;
 }

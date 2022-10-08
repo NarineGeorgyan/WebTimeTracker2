@@ -34,11 +34,13 @@ const SideBar = (props) => {
   return (
     <>
       <Card>
-        <Container classname="rounded-inherit">
-          <Row classname="w-100% ">
-            <Col className="d-flex flex-row justify-content-space-between p-0 ">
+        <Container>
+          <Row>
+            <Col className="d-flex flex-row p-0 ">
               <NavigationBar data={menuItem} />
-              <main>{props.children}</main>
+              <main style={{ width: "100%", padding: "1.5rem" }}>
+                {props.children}
+              </main>
             </Col>
           </Row>
         </Container>

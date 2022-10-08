@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Form from "react-bootstrap/Form";
 
 const Site = () => {
-  return (
-    <div>Site</div>
-  )
-}
+  return <Form></Form>;
+};
 
-export default Site
+export default Site;

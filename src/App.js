@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Routes, Route } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -9,11 +7,12 @@ import Home from "./pages/Home";
 import SideBar from "./components/SideBar";
 import NotFound from "./pages/NotFound";
 
+import "./App.css";
 
 function App() {
   return (
     <div className="APP">
-      <Router>
+        <Router>
         <SideBar>
           <Routes>
             <Route path="/" element={<Home />} />

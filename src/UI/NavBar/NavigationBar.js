@@ -1,26 +1,36 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
-import styles from "./NavigationBar.module.css";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const NavigationBar = (props) => {
   return (
     <>
-      <Navbar className={styles.nav}>
-        <Nav className="d-flex flex-column ">
-          {props.data &&
-            props.data.map((item, i) => (
-              <Link
-                className="d-flex justify-content-center border-1 px-3 pb-2 text-white  gap-2 "
-                to={item.path}
-                key={i}
-              >
-                <div className="icon">{item.icon}</div>
-                <div className="link-name">{item.name} </div>
-              </Link>
-            ))}
-        </Nav>
+      <Navbar
+        style={{
+          backgroundColor: "#0a1647",
+          minHeight: "60vh",
+          width: "16rem",
+        }}
+      >
+        <Container className="d-flex flex-column align-items-start">
+          <div className="h3 text-white mt-auto gap-1">
+            Web Activity Timer Tracker
+          </div>
+          <Nav className="d-flex flex-column p-3 mb-5">
+            {props.data &&
+              props.data.map((item, i) => (
+                <NavLink
+                  className="d-flex justify-content-start text-white text-decoration-none pb-2 gap-2"
+                  activeClassName="actvive"
+                  to={item.path}
+                  key={i}
+                >
+                  <div className="fs-xs-4 fs-5">{item.icon}</div>
+                  <div className="fs-5">{item.name}</div>
+                </NavLink>
+              ))}
+          </Nav>
+        </Container>
       </Navbar>
     </>
   );
