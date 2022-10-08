@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Time from "../components/Time";
 
 const Limit = () => {
   return (
-    <div>Limit</div>
-  )
-}
+    <>
+      <Time />
+    </>
+  );
+};
 
-export default Limit
+export default Limit;

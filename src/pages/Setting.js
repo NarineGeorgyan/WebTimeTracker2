@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Site from "../components/Site";
 
 const Setting = () => {
   return (
-    <div>Setting</div>
-  )
-}
+    <>
+      <Site />
+    </>
+  );
+};
 
-export default Setting
+export default Setting;
