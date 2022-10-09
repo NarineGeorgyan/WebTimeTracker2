@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonItem from "../UI/Button/ButtonItem";
 import UsingSiteList from "./UsingSiteList";
 
+const nextSiteId = (setUseSites) => {
+  const maxId = setUseSites.reduce(
+    (maxId, todo) => Math.max(todo.id, maxId),
+    -1
+  );
+  console.log(maxId);
+  return maxId === -1 ? 1 : maxId + 1;
+};
+
 const Time = () => {
   const [inputSiteName, setInputSiteName] = useState("");
   const [inputTime, setInputTime] = useState("");
+  const [formIsValid, setFormIsValid] = useState(false);
   const dispatch = useDispatch();
   const setUseSites = useSelector((state) => state.useSites.useSites);
-  console.log(setUseSites);
-  const nextSiteId = (setUseSites) => {
-    const maxId = setUseSites.reduce(
-      (maxId, todo) => Math.max(todo.id, maxId),
-      -1
-    );
-    console.log(maxId);
-    return maxId === -1 ? 1 : maxId + 1;
-  };
+
   const FormDateHandler = (e) => {
     e.preventDefault();
     dispatch({
@@ -42,6 +44,15 @@ const Time = () => {
     setInputTime(e.target.value);
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFormIsValid(
+        inputSiteName.trim().length > 0 && inputTime.trim().length > 0
+      );
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [inputSiteName, inputTime]);
+
   return (
     <>
       <Form className="p-4 p-sm-3 mb-4" onSubmit={FormDateHandler}>
@@ -64,7 +75,9 @@ const Time = () => {
             onChange={TimeChangeHandler}
             required
           />
-          <ButtonItem type="submit">+</ButtonItem>
+          <ButtonItem type="submit" disabled={!formIsValid}>
+            +
+          </ButtonItem>
         </Container>
       </Form>
 
