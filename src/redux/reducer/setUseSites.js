@@ -10,7 +10,7 @@ const setUseSites = (state = { useSites: [] }, action) => {
         (useSite) => useSite.id === action.payload
       );
       return {
-        useSites: afterEditState
+        useSites: [afterEditState],
       };
     }
     case "DELETE_SITE": {
