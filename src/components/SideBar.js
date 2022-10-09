@@ -41,7 +41,7 @@ const SideBar = (props) => {
               <main
                 style={{
                   width: "100%",
-                  maxWidth: "30rem",
+                  maxWidth: "50rem",
                   padding: "1.5rem",
                   backgroundColor: "#6fe3e1",
                 }}

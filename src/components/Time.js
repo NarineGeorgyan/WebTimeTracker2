@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonItem from "../UI/Button/ButtonItem";
@@ -9,12 +9,13 @@ const Time = () => {
   const [inputTime, setInputTime] = useState("");
   const dispatch = useDispatch();
   const setUseSites = useSelector((state) => state.useSites.useSites);
-
+  console.log(setUseSites);
   const nextSiteId = (setUseSites) => {
     const maxId = setUseSites.reduce(
       (maxId, todo) => Math.max(todo.id, maxId),
       -1
     );
+    console.log(maxId);
     return maxId === -1 ? 1 : maxId + 1;
   };
   const FormDateHandler = (e) => {
