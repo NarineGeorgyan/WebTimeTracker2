@@ -8,11 +8,10 @@ import SideBar from "./components/SideBar";
 import NotFound from "./pages/NotFound";
 
 import "./App.css";
-
 function App() {
   return (
     <div className="APP">
-        <Router>
+      <Router>
         <SideBar>
           <Routes>
             <Route path="/" element={<Home />} />

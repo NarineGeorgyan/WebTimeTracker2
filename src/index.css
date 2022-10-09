@@ -10,8 +10,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  height: 100%;
+  min-height: 90vh;
+
   font-size: 16px;
   background: hsla(233, 100%, 90%, 1);
 

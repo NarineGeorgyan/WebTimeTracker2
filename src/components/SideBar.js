@@ -7,8 +7,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import Card from "../UI/Card/Card";
 import NavigationBar from "../UI/NavBar/NavigationBar";
 
-// import styles from "./SideBar.module.css";
-
 const SideBar = (props) => {
   const menuItem = [
     {
@@ -43,7 +41,7 @@ const SideBar = (props) => {
                   width: "100%",
                   maxWidth: "50rem",
                   padding: "1.5rem",
-                  backgroundColor: "#6fe3e1",
+                  backgroundColor: "#9bb2e5",
                 }}
               >
                 {props.children}
