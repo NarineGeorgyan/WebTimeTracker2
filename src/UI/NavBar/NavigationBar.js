@@ -13,15 +13,16 @@ const NavigationBar = (props) => {
         }}
       >
         <Container className="d-flex flex-column align-items-start">
-          <div className="h3 text-white mt-auto gap-1">
-            Web Activity Timer Tracker
+          <div className="navbar-title h3 text-white pb-2 gap-1 d-flex flex-column ">
+            <span> Web Activity</span>
+            <span>Timer Tracker</span>
           </div>
           <Nav className="d-flex flex-column p-3 mb-5">
             {props.data &&
               props.data.map((item, i) => (
                 <NavLink
-                  className="d-flex justify-content-start text-white text-decoration-none pb-2 gap-2"
-                  activeClassName="actvive"
+                  className="d-flex justify-content-start text-white text-decoration-none p-2 gap-2"
+                  activeclassname="actvive"
                   to={item.path}
                   key={i}
                 >

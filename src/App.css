@@ -10,3 +10,7 @@
   border-radius: 4px;
   transition: all 0.3s;
 }
+.navbar-title {
+  width: 100%;
+  font-weight: 700;
+}

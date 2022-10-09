@@ -38,7 +38,14 @@ const SideBar = (props) => {
           <Row>
             <Col className="d-flex flex-row p-0 ">
               <NavigationBar data={menuItem} />
-              <main style={{ width: "100%", padding: "1.5rem" }}>
+              <main
+                style={{
+                  width: "100%",
+                  maxWidth: "30rem",
+                  padding: "1.5rem",
+                  backgroundColor: "#6fe3e1",
+                }}
+              >
                 {props.children}
               </main>
             </Col>
