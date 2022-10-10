@@ -1,0 +1,34 @@
+{
+  "name": "Time Tracker ",
+  "short_name": "Time Tracker",
+  "description": "Analyses the most usable webSItes visiting time",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "image/planetearth128.png",
+    "16": "image/planetEarth16.png",
+    "48": "image/planetearth48.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "128": "image/sun-128.png",
+      "16": "image/sun-16.png",
+      "48": "image/sun-48.png"
+    },
+    "default_popup": "public/index.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/"],
+      "js": ["App.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["http://localhost:3000//"],
+  "permissions": ["storage", "tabs"]
+}
