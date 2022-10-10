@@ -9,7 +9,6 @@ const nextSiteId = (setUseSites) => {
     (maxId, todo) => Math.max(todo.id, maxId),
     -1
   );
-  console.log(maxId);
   return maxId === -1 ? 1 : maxId + 1;
 };
 
@@ -55,13 +54,13 @@ const Time = () => {
 
   return (
     <>
-      <Form className="p-4 p-sm-3 mb-4" onSubmit={FormDateHandler}>
+      <Form className="p-4 p-sm-3 mb-4 " onSubmit={FormDateHandler}>
         <Form.Text className="p-1 fs-4 fs-xs-3">
           Access daily restrictions for web sites
         </Form.Text>
-        <Container className="d-flex flex-row gap-3 mt-3 flex-xs-wrap md-3 ">
+        <Container className="d-flex flex-row gap-3 mt-3 flex-wrap md-3 ">
           <Form.Control
-            type="email"
+            type="text"
             name="siteName"
             placeholder="Enter site name"
             value={inputSiteName}

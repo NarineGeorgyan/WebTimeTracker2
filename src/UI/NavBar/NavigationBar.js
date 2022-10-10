@@ -10,7 +10,7 @@ const NavigationBar = (props) => {
         collapseOnSelect
         expand="sm"
         variant="dark"
-        style={{ backgroundColor: "#471069", height: "60vh" }}
+        style={{ backgroundColor: "#471069", minHeight: "60vh" }}
       >
         <Navbar.Toggle
           aria-controls="navbarScroll"

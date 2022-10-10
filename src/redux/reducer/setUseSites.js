@@ -1,6 +1,5 @@
-import { act } from "react-dom/test-utils";
-
 const setUseSites = (state = { useSites: [] }, action) => {
+  // localStorage.setItem("store", JSON.stringify(state.useSites));
   switch (action.type) {
     case "ADD_NEW_SITE": {
       return { useSites: [...state.useSites, ...action.payload.useSites] };
