@@ -14,3 +14,19 @@
   width: 100%;
   font-weight: 700;
 }
+.chart {
+  position: relative;
+}
+.chart .title {
+  margin-left: auto;
+  margin-right: auto;
+  width: 48%;
+  height: 40%;
+  position: absolute;
+  left: 0;
+  right: 0; 
+  top: 19%;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #432371;
+}

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import BarChart from "../Chart/BarChart";
 import { inputData } from "../../data";
 import { Container, Row, Col } from "react-bootstrap";
+import LabelComponent from "../../UI/LabelComponent/LabelComponent";
 
 const Today = () => {
   const [useSiteData] = useState({
@@ -28,36 +29,29 @@ const Today = () => {
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)",
         ],
-        borderWidth: 1,
+        borderWidth: 2,
         borderRadius: 15,
-        spacing: 10,
+        spacing: 15,
       },
     ],
   });
 
   return (
-    <Container className="flex justify-content gap-3 mx-auto">
+    <Container className="chart d-flex flex-column gap-5 max-w-xs mx-auto">
       <Row>
-        <Col className="position-relative" style={{ width: "30rem" }}>
+        <Col>
           <BarChart charData={useSiteData} options={useSiteData} />
-        </Col>
-        <Col className="">
-          <h3
-            className="bg-white fw-bold text-center"
-            style={{
-              height: "10rem",
-              width: "10rem",
-              borderRadius: "50%",
-              position: "absolute",
-              top: "50%",
-              right: "33%",
-            }}
-          >
+          <div className="title d-flex flex-column justify-content-center align-items-center bg-primary fs-2 fw-bold gap-2">
             google.com
-            <span className="d-block">65%</span>
-            <span className="d-block">time</span>
-            <span className="d-block">visit</span>
-          </h3>
+            <span className="fs-5 text-xs text-light">65%</span>
+            <span className="fs-5 text-xs text-light">time</span>
+            <span className="fs-5 text-xs text-light">visit</span>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <LabelComponent data={inputData} />
         </Col>
       </Row>
     </Container>
