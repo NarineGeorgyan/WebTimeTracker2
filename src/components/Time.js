@@ -22,7 +22,7 @@ const Time = (props) => {
   const dispatch = useDispatch();
   const setUseSites = useSelector((state) => state.useSites.useSites);
 
-  const FormDateHandler = (e) => {
+  const formDateHandler = (e) => {
     e.preventDefault();
     dispatch({
       type: "ADD_NEW_SITE",
@@ -60,7 +60,7 @@ const Time = (props) => {
   };
   return (
     <>
-      <Form className="p-4 p-sm-3 mb-4 " onSubmit={FormDateHandler}>
+      <Form className="p-4 p-sm-3 mb-4 " onSubmit={formDateHandler}>
         <Form.Text className="p-1 fs-4 fs-xs-3">
           Access daily restrictions for web sites
         </Form.Text>
