@@ -21,14 +21,14 @@
 
   "content_scripts": [
     {
-      "matches": ["http://localhost:3000/"],
-      "js": ["App.js"]
+      "matches": ["http://localhost:3000/*"],
+      "js": ["content.js"]
     }
   ],
 
   "background": {
     "service_worker": "background.js"
   },
-  "host_permissions": ["http://localhost:3000//"],
+  "host_permissions": ["http://localhost:3000/*"],
   "permissions": ["storage", "tabs"]
 }

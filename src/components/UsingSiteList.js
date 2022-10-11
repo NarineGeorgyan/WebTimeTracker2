@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import UseSite from "./UseSite";
 
-const UsingSiteList = () => {
+const UsingSiteList = (props) => {
   const setUseSites = useSelector((state) => state.useSites.useSites);
 
   return (
@@ -18,7 +18,9 @@ const UsingSiteList = () => {
         </thead>
         <tbody>
           {setUseSites && setUseSites.length ? (
-            setUseSites.map((useSite, i) => <UseSite {...useSite} key={i} />)
+            setUseSites.map((useSite, i) => (
+              <UseSite {...useSite} key={i} setUpdateDate={props.onUpDateObject} />
+            ))
           ) : (
             <tr className="text-danger fs-4 text-center">
               <td scope="row" colSpan="4">

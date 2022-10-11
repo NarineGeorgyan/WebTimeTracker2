@@ -1,18 +1,19 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { MdModeEdit, MdDeleteForever } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonItem from "../UI/Button/ButtonItem";
 
 const UseSite = (props) => {
   const dispatch = useDispatch();
+  const setUseSites = useSelector((state) => state.useSites.useSites);
 
   const deleteHandler = (id) => {
-    console.log(id);
     dispatch({ type: "DELETE_SITE", payload: id });
   };
   const editHandler = (id) => {
-    dispatch({ type: "EDIT_SITE", payload: id });
+    const updateDate = setUseSites.find((useSite) => useSite.id === id);
+    props.setUpdateDate(updateDate);
   };
   return (
     <tr className="text-center fs-5">

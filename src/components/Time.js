@@ -12,10 +12,13 @@ const nextSiteId = (setUseSites) => {
   return maxId === -1 ? 1 : maxId + 1;
 };
 
-const Time = () => {
+const Time = (props) => {
   const [inputSiteName, setInputSiteName] = useState("");
   const [inputTime, setInputTime] = useState("");
+  const [updateSiteName, setUpdatedSiteName] = useState("");
+  const [updatedTime, setUpdatedTime] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
+
   const dispatch = useDispatch();
   const setUseSites = useSelector((state) => state.useSites.useSites);
 
@@ -51,26 +54,29 @@ const Time = () => {
     }, 800);
     return () => clearTimeout(timer);
   }, [inputSiteName, inputTime]);
-
+  const upDateHandler = (obj) => {
+    setUpdatedSiteName(obj.site);
+    setUpdatedTime(obj.time);
+  };
   return (
     <>
       <Form className="p-4 p-sm-3 mb-4 " onSubmit={FormDateHandler}>
         <Form.Text className="p-1 fs-4 fs-xs-3">
           Access daily restrictions for web sites
         </Form.Text>
-        <Container className="d-flex flex-row gap-3 mt-3 flex-wrap md-3 ">
+        <Container className="d-flex flex-row gap-3 mt-3 flex-xs-wrap md-3 ">
           <Form.Control
             type="text"
             name="siteName"
             placeholder="Enter site name"
-            value={inputSiteName}
+            value={inputSiteName || updateSiteName}
             onChange={SiteChangeHandler}
             required
           />
           <Form.Control
             type="time"
             name="time"
-            value={inputTime}
+            value={inputTime || updatedTime}
             onChange={TimeChangeHandler}
             required
           />
@@ -80,7 +86,7 @@ const Time = () => {
         </Container>
       </Form>
 
-      <UsingSiteList />
+      <UsingSiteList onUpDateObject={upDateHandler} />
     </>
   );
 };

@@ -30,7 +30,7 @@ const NavigationBar = (props) => {
                 props.data.map((item, i) => (
                   <NavLink
                     className="d-flex justify-content-start text-white text-decoration-none p-2 gap-2"
-                    activeclassname="actvive"
+                    activeclassname="active"
                     to={item.path}
                     key={i}
                   >
