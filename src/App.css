@@ -20,12 +20,12 @@
 .chart .title {
   margin-left: auto;
   margin-right: auto;
-  width: 48%;
-  height: 40%;
+  width: 59%;
+  height: 60%;
   position: absolute;
   left: 0;
-  right: 0; 
-  top: 19%;
+  right: 0;
+  top: 22%;
   border-radius: 50%;
   overflow: hidden;
   color: #432371;

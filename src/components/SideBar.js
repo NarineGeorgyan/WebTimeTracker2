@@ -32,7 +32,7 @@ const SideBar = (props) => {
   return (
     <>
       <Card>
-        <Container>
+        <Container data-testid="begin">
           <Row>
             <Col className="d-flex flex-row p-0 ">
               <NavigationBar data={menuItem} />

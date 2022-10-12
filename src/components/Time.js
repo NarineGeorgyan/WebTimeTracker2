@@ -18,13 +18,13 @@ const Time = (props) => {
   const [updateSiteName, setUpdatedSiteName] = useState("");
   const [updatedTime, setUpdatedTime] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
- 
 
   const dispatch = useDispatch();
   const setUseSites = useSelector((state) => state.useSites.useSites);
 
   const formDateHandler = (e) => {
     e.preventDefault();
+
     dispatch({
       type: "ADD_NEW_SITE",
       payload: {
@@ -39,6 +39,7 @@ const Time = (props) => {
     });
     setInputSiteName("");
     setInputTime("");
+    setUpdatedSiteName("");
   };
   const SiteChangeHandler = (e) => {
     setInputSiteName(e.target.value);
@@ -55,6 +56,7 @@ const Time = (props) => {
     }, 800);
     return () => clearTimeout(timer);
   }, [inputSiteName, inputTime]);
+
   const upDateHandler = (obj) => {
     setUpdatedSiteName(obj.site);
     setUpdatedTime(obj.time);

@@ -4,7 +4,6 @@ import UseSite from "./UseSite";
 
 const UsingSiteList = (props) => {
   const setUseSites = useSelector((state) => state.useSites.useSites);
-
   return (
     <>
       <table className="table table-light">
@@ -19,7 +18,11 @@ const UsingSiteList = (props) => {
         <tbody>
           {setUseSites && setUseSites.length ? (
             setUseSites.map((useSite, i) => (
-              <UseSite {...useSite} key={i} setUpdateDate={props.onUpDateObject} />
+              <UseSite
+                {...useSite}
+                key={i}
+                setUpdateDate={props.onUpDateObject}
+              />
             ))
           ) : (
             <tr className="text-danger fs-4 text-center">

@@ -1,4 +1,4 @@
-import React, { useSite } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import { MdModeEdit, MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,19 +14,21 @@ const UseSite = (props) => {
   const editHandler = (id) => {
     const updateDate = setUseSites.find((useSite) => useSite.id === id);
     props.setUpdateDate(updateDate);
-    setToggle(false);
   };
   return (
-    <tr className="text-center fs-5">
+    <tr className="text-center fs-5" data-testid="siteRow">
       <td>{props.id}</td>
       <td>{props.site}</td>
       <td>{props.time}</td>
       <td>
         <Container className="d-flex flex-row gap-2 align-items-center  justify-content-end ">
-          <ButtonItem onClick={() => editHandler(props.id)}>
+          <ButtonItem
+            id="editButton"
+            onClick={() => editHandler(props.id)}
+          >
             <MdModeEdit className="text-danger fs-5" />
           </ButtonItem>
-          <ButtonItem onClick={() => deleteHandler(props.id)}>
+          <ButtonItem id="deleteButton" onClick={() => deleteHandler(props.id)}>
             <MdDeleteForever className="text-danger fs-5" />
           </ButtonItem>
         </Container>

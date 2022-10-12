@@ -11,6 +11,7 @@ const NavigationBar = (props) => {
         expand="sm"
         variant="dark"
         style={{ backgroundColor: "#471069", minHeight: "60vh" }}
+        data-testid="useSite"
       >
         <Navbar.Toggle
           aria-controls="navbarScroll"

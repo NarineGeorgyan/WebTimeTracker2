@@ -52,15 +52,19 @@ const Site = () => {
           <Form.Label>Stop tracking if no activity detected for</Form.Label>
           <Form.Select
             aria-label="Default select example"
-            name="seconds"
+            name="selectSeconds"
             value={seconds}
             onChange={(e) => setSeconds(e.target.value)}
           >
-            {[...Array(60).keys()].map((item, i) => (
-              <option key={i}>{item} seconds</option>
+            {[...Array(61).keys()].map((item, i) => (
+              <option key={item} value={`item ${item}`}>
+                {item} seconds
+              </option>
             ))}
           </Form.Select>
-          <ButtonItem type="submit">Add</ButtonItem>
+          <ButtonItem className="text-center p-3 mt-2" type="submit">
+            Create
+          </ButtonItem>
         </Form.Group>
       </Container>
     </Form>

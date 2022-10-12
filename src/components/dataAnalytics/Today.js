@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import BarChart from "../Chart/BarChart";
 import { inputData } from "../../data";
 import { Container, Row, Col } from "react-bootstrap";
-import LabelComponent from "../../UI/LabelComponent/LabelComponent";
 
 const Today = () => {
   const [useSiteData] = useState({
@@ -47,11 +46,6 @@ const Today = () => {
             <span className="fs-5 text-xs text-light">time</span>
             <span className="fs-5 text-xs text-light">visit</span>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <LabelComponent data={inputData} />
         </Col>
       </Row>
     </Container>

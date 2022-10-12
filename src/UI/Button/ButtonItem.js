@@ -9,6 +9,7 @@ const ButtonItem = (props) => {
         type={props.type || "button"}
         onClick={props.onClick}
         disabled={props.disabled}
+        id={props.id}
       >
         {props.children}
       </Button>
