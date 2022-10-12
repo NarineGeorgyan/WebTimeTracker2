@@ -1,9 +1,11 @@
-chrome.action.onClicked.addListener((tab) => {
-  // Send a message to the active tab
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    var activeTab = tabs[0];
-    chrome.tabs.sendMessage(activeTab.id, {
-      message: "clicked_browser_action",
-    });
-  });
+chrome.tabs.query({ currentWindow: true, active: true }, function (tabArray) {
+  chrome.tabs.executeScript(
+    tabArray[0].id,
+    {
+      file: "../public/index.html",
+    },
+    function () {
+      chrome.tabs.sendMessage(this.props.source);
+    }
+  );
 });

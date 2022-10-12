@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useSite } from "react";
 import { Container } from "react-bootstrap";
 import { MdModeEdit, MdDeleteForever } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const UseSite = (props) => {
   const editHandler = (id) => {
     const updateDate = setUseSites.find((useSite) => useSite.id === id);
     props.setUpdateDate(updateDate);
+    setToggle(false);
   };
   return (
     <tr className="text-center fs-5">

@@ -4,7 +4,7 @@ const setUseSites = (state = { useSites: [] }, action) => {
     case "ADD_NEW_SITE": {
       return { useSites: [...state.useSites, ...action.payload.useSites] };
     }
-    
+
     case "DELETE_SITE": {
       const afterDeleteState = state.useSites.filter(
         (useSite) => useSite.id !== action.payload
