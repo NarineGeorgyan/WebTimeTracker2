@@ -5,6 +5,7 @@ import { inputData } from "../../data";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Today = () => {
+  const date = { ...inputData };
   const [useSiteData] = useState({
     labels: inputData.map((data) => data.site),
     datasets: [
@@ -36,17 +37,23 @@ const Today = () => {
   });
 
   return (
-    <Container className="chart d-flex flex-column gap-5 max-w-xs mx-auto">
+    <Container className="chart d-flex flex-column gap-5 max-w-xs mx-auto  ">
       <Row>
-        <Col>
-          <BarChart charData={useSiteData} options={useSiteData} />
-          <div className="title d-flex flex-column justify-content-center align-items-center bg-primary fs-2 fw-bold gap-2">
-            google.com
-            <span className="fs-5 text-xs text-light">65%</span>
-            <span className="fs-5 text-xs text-light">time</span>
-            <span className="fs-5 text-xs text-light">visit</span>
-          </div>
+        <Col xs={11}>
+          <BarChart
+            classNa
+            me="text-center"
+            charData={useSiteData}
+            options={useSiteData}
+          />
         </Col>
+
+        <div className="title d-flex flex-column justify-content-center align-items-center bg-primary fs-2 fw-bold gap-2">
+          google.com
+          <span className="fs-5 text-xs text-light">65%</span>
+          <span className="fs-5 text-xs text-light">time</span>
+          <span className="fs-5 text-xs text-light">visit</span>
+        </div>
       </Row>
     </Container>
   );
